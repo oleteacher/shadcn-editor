@@ -14,11 +14,11 @@ export function ContentEditable({
   placeholderClassName,
 }: Props): JSX.Element {
   return (
-    <ScrollArea className="h-[calc(100vh-9em)]">
+    <ScrollArea className="h-[calc(100dvh-7.5em)]">
       <LexicalContentEditable
         className={
           className ??
-          `ContentEditable__root relative block min-h-96 px-8 py-4 focus:outline-none`
+          `ContentEditable__root relative block min-h-full px-8 py-4 focus:outline-none`
         }
         aria-placeholder={placeholder}
         placeholder={
