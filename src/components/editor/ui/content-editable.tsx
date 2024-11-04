@@ -14,7 +14,7 @@ export function ContentEditable({
   placeholderClassName,
 }: Props): JSX.Element {
   return (
-    <ScrollArea className="h-[calc(100dvh-7.5em)]">
+    <ScrollArea className="h-[calc(100vh-9em)]">
       <LexicalContentEditable
         className={
           className ??
