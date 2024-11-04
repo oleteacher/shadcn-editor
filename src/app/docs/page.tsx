@@ -4,7 +4,7 @@ import { useState, useTransition } from 'react'
 
 import Link from 'next/link'
 
-import { ArrowLeftIcon } from 'lucide-react'
+import { ArrowLeftIcon, GithubIcon } from 'lucide-react'
 import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
@@ -62,7 +62,7 @@ export default function Docs() {
         We're working hard on our documentation. Sign up to get notified when
         it's ready.
       </p>
-      <form onSubmit={handleSubmit} className="w-full max-w-sm">
+      <form onSubmit={handleSubmit} className="w-full max-w-sm mb-8">
         <div className="flex flex-col gap-2 sm:flex-row">
           <Input
             type="email"
@@ -77,6 +77,15 @@ export default function Docs() {
           </Button>
         </div>
       </form>
+      <p className="mb-8 max-w-md text-center text-gray-600">
+        <span>Here is the source code of Shadcn Editor.</span>{' '}
+        <Link
+          href="https://github.com/htmujahid/shadcn-editor"
+          className="underline"
+        >
+          View on GitHub
+        </Link>
+      </p>
     </div>
   )
 }
