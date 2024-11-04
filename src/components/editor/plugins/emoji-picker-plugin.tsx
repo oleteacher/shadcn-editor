@@ -154,17 +154,40 @@ export function EmojiPickerPlugin() {
         return anchorElementRef.current && options.length
           ? createPortal(
               <div className="fixed w-[200px] rounded-md shadow-md">
-                <Command>
+                <Command
+                  onKeyDown={(e) => {
+                    if (e.key === 'ArrowUp') {
+                      e.preventDefault()
+                      setHighlightedIndex(
+                        selectedIndex !== null
+                          ? (selectedIndex - 1 + options.length) %
+                              options.length
+                          : options.length - 1
+                      )
+                    } else if (e.key === 'ArrowDown') {
+                      e.preventDefault()
+                      setHighlightedIndex(
+                        selectedIndex !== null
+                          ? (selectedIndex + 1) % options.length
+                          : 0
+                      )
+                    }
+                  }}
+                >
                   <CommandList>
                     <CommandGroup>
-                      {options.map((option, i: number) => (
+                      {options.map((option, index) => (
                         <CommandItem
                           key={option.key}
                           value={option.title}
                           onSelect={() => {
                             selectOptionAndCleanUp(option)
                           }}
-                          className="flex items-center gap-2"
+                          className={`flex items-center gap-2 ${
+                            selectedIndex === index
+                              ? 'bg-accent'
+                              : '!bg-transparent'
+                          }`}
                         >
                           {option.emoji} {option.title}
                         </CommandItem>

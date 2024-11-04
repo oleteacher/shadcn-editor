@@ -62,7 +62,7 @@ export default function Docs() {
         We're working hard on our documentation. Sign up to get notified when
         it's ready.
       </p>
-      <form onSubmit={handleSubmit} className="w-full max-w-sm mb-8">
+      <form onSubmit={handleSubmit} className="mb-8 w-full max-w-sm">
         <div className="flex flex-col gap-2 sm:flex-row">
           <Input
             type="email"
