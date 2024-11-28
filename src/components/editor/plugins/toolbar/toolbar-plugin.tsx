@@ -4,10 +4,17 @@ import { useState } from 'react'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { COMMAND_PRIORITY_CRITICAL, SELECTION_CHANGE_COMMAND } from 'lexical'
 
+import { ToolbarContext } from '@/components/editor/context/toolbar-context'
 import { Separator } from '@/components/ui/separator'
 
-import { ToolbarContext } from '../../context/toolbar-context'
 import { BlockFormatDropDown } from './block-format-toolbar-plugin'
+import { FormatBulletedList } from './block-format/format-bulleted-list'
+import { FormatCheckList } from './block-format/format-check-list'
+import { FormatCodeBlock } from './block-format/format-code-block'
+import { FormatHeading } from './block-format/format-heading'
+import { FormatNumberedList } from './block-format/format-numbered-list'
+import { FormatParagraph } from './block-format/format-paragraph'
+import { FormatQuote } from './block-format/format-quote'
 import { BlockInsertPlugin } from './block-insert-plugin'
 import { ClearFormattingToolbarPlugin } from './clear-formatting-toolbar-plugin'
 import { CodeLanguageToolbarPlugin } from './code-language-toolbar-plugin'
@@ -50,7 +57,15 @@ export function ToolbarPlugin() {
       <div className="vertical-align-middle sticky top-0 z-10 flex gap-2 overflow-auto border-b bg-white p-1">
         <HistoryToolbarPlugin />
         <Separator orientation="vertical" className="h-8" />
-        <BlockFormatDropDown />
+        <BlockFormatDropDown>
+          <FormatParagraph />
+          <FormatHeading levels={['h1', 'h2', 'h3']} />
+          <FormatNumberedList />
+          <FormatBulletedList />
+          <FormatCheckList />
+          <FormatCodeBlock />
+          <FormatQuote />
+        </BlockFormatDropDown>
         {blockType === 'code' ? (
           <CodeLanguageToolbarPlugin />
         ) : (
