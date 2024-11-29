@@ -27,6 +27,15 @@ import { FontSizeToolbarPlugin } from './font-size-toolbar-plugin'
 import { HistoryToolbarPlugin } from './history-toolbar-plugin'
 import { LinkToolbarPlugin } from './link-toolbar-plugin'
 import { SubSuperToolbarPlugin } from './subsuper-toolbar-plugin'
+import { InsertHorizontalRule } from './block-insert/insert-horizontal-rule'
+import { InsertPageBreak } from './block-insert/insert-page-break'
+import { InsertImage } from './block-insert/insert-image'
+import { InsertInlineImage } from './block-insert/insert-inline-image'
+import { InsertExcalidraw } from './block-insert/insert-excalidraw'
+import { InsertTable } from './block-insert/insert-table'
+import { InsertPoll } from './block-insert/insert-poll'
+import { InsertColumnsLayout } from './block-insert/insert-columns-layout'
+import { InsertEmbeds } from './block-insert/insert-embeds'
 
 export function ToolbarPlugin() {
   const [editor] = useLexicalComposerContext()
@@ -88,7 +97,17 @@ export function ToolbarPlugin() {
             <Separator orientation="vertical" className="h-8" />
             <ElementFormatToolbarPlugin />
             <Separator orientation="vertical" className="h-8" />
-            <BlockInsertPlugin />
+            <BlockInsertPlugin>
+              <InsertHorizontalRule />
+              <InsertPageBreak />
+              <InsertImage />
+              <InsertInlineImage />
+              <InsertExcalidraw />
+              <InsertTable />
+              <InsertPoll />
+              <InsertColumnsLayout />
+              <InsertEmbeds />
+            </BlockInsertPlugin>
           </>
         )}
       </div>
