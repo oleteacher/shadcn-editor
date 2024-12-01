@@ -68,7 +68,7 @@ import {
   CommandList,
 } from '@/components/ui/command'
 
-import { useModal } from '../hooks/use-modal'
+import { useEditorModal } from '../hooks/use-modal'
 import { INSERT_COLLAPSIBLE_COMMAND } from './collapsible-plugin'
 import { EmbedConfigs } from './embeds/auto-embed-plugin'
 import { InsertEquationDialog } from './equations-plugin'
@@ -145,7 +145,7 @@ function getDynamicOptions(editor: LexicalEditor, queryString: string) {
   return options
 }
 
-type ShowModal = ReturnType<typeof useModal>[1]
+type ShowModal = ReturnType<typeof useEditorModal>[1]
 
 function getBaseOptions(editor: LexicalEditor, showModal: ShowModal) {
   return [
@@ -309,7 +309,7 @@ function getBaseOptions(editor: LexicalEditor, showModal: ShowModal) {
 
 export function ComponentPickerMenuPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
-  const [modal, showModal] = useModal()
+  const [modal, showModal] = useEditorModal()
   const [queryString, setQueryString] = useState<string | null>(null)
 
   const checkForTriggerMatch = useBasicTypeaheadTriggerMatch('/', {

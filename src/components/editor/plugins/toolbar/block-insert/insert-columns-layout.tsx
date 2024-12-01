@@ -1,14 +1,14 @@
 import { Columns3Icon } from 'lucide-react'
 
 import { useToolbarContext } from '@/components/editor/context/toolbar-context'
-import { useModal } from '@/components/editor/hooks/use-modal'
+import { useEditorModal } from '@/components/editor/hooks/use-modal'
 import { SelectItem } from '@/components/ui/select'
 
 import { InsertLayoutDialog } from '../../layout-plugin'
 
 export function InsertColumnsLayout() {
   const { activeEditor } = useToolbarContext()
-  const [modal, showModal] = useModal()
+  const [, showModal] = useEditorModal()
 
   return (
     <SelectItem

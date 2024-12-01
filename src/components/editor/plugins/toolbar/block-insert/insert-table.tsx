@@ -1,14 +1,14 @@
 import { TableIcon } from 'lucide-react'
 
 import { useToolbarContext } from '@/components/editor/context/toolbar-context'
-import { useModal } from '@/components/editor/hooks/use-modal'
+import { useEditorModal } from '@/components/editor/hooks/use-modal'
 import { SelectItem } from '@/components/ui/select'
 
 import { InsertTableDialog } from '../../table-plugin'
 
 export function InsertTable() {
   const { activeEditor } = useToolbarContext()
-  const [modal, showModal] = useModal()
+  const [, showModal] = useEditorModal()
 
   return (
     <SelectItem

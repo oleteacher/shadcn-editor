@@ -1,14 +1,14 @@
 import { DiffIcon } from 'lucide-react'
 
 import { useToolbarContext } from '@/components/editor/context/toolbar-context'
-import { useModal } from '@/components/editor/hooks/use-modal'
+import { useEditorModal } from '@/components/editor/hooks/use-modal'
 import { SelectItem } from '@/components/ui/select'
 
 import { InsertEquationDialog } from '../../equations-plugin'
 
 export function InsertEquation() {
   const { activeEditor } = useToolbarContext()
-  const [modal, showModal] = useModal()
+  const [, showModal] = useEditorModal()
 
   return (
     <SelectItem

@@ -23,7 +23,7 @@ import {
 } from '@/components/ui/select'
 
 import { useToolbarContext } from '../../context/toolbar-context'
-import { useModal } from '../../hooks/use-modal'
+import { useEditorModal } from '../../hooks/use-modal'
 import { INSERT_COLLAPSIBLE_COMMAND } from '../collapsible-plugin'
 import { EmbedConfigs } from '../embeds/auto-embed-plugin'
 import { InsertEquationDialog } from '../equations-plugin'
@@ -37,7 +37,7 @@ import { InsertTableDialog } from '../table-plugin'
 
 export function BlockInsertPlugin({children}: {children: React.ReactNode}) {
   const { activeEditor } = useToolbarContext()
-  const [modal, showModal] = useModal()
+  const [modal, showModal] = useEditorModal()
 
   return (
     <>
