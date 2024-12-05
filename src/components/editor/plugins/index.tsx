@@ -10,7 +10,6 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
-import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
 import { TablePlugin } from '@lexical/react/LexicalTablePlugin'
@@ -65,7 +64,9 @@ import { TypingPerfPlugin } from './typing-pref-plugin'
 const placeholder = 'Press / for commands...'
 const maxLength = 500
 
-export function Plugins() {
+export function Plugins({
+
+}) {
   const [floatingAnchorElem, setFloatingAnchorElem] =
     useState<HTMLDivElement | null>(null)
 
@@ -90,13 +91,6 @@ export function Plugins() {
             </div>
           }
           ErrorBoundary={LexicalErrorBoundary}
-        />
-
-        <OnChangePlugin
-          ignoreSelectionChange={true}
-          onChange={(_, editor) => {
-            editor.update(() => {})
-          }}
         />
 
         <ClickableLinkPlugin />
