@@ -64,9 +64,7 @@ import { TypingPerfPlugin } from './typing-pref-plugin'
 const placeholder = 'Press / for commands...'
 const maxLength = 500
 
-export function Plugins({
-
-}) {
+export function Plugins({}) {
   const [floatingAnchorElem, setFloatingAnchorElem] =
     useState<HTMLDivElement | null>(null)
 

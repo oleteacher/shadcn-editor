@@ -12,7 +12,7 @@ import {
 
 export const blockTypeToBlockName: Record<
   string,
-  { label: string; icon: React.ReactNode; }
+  { label: string; icon: React.ReactNode }
 > = {
   paragraph: {
     label: 'Paragraph',

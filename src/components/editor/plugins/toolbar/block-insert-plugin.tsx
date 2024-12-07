@@ -35,7 +35,7 @@ import { INSERT_PAGE_BREAK } from '../page-break-plugin'
 import { InsertPollDialog } from '../poll-plugin'
 import { InsertTableDialog } from '../table-plugin'
 
-export function BlockInsertPlugin({children}: {children: React.ReactNode}) {
+export function BlockInsertPlugin({ children }: { children: React.ReactNode }) {
   const { activeEditor } = useToolbarContext()
   const [modal, showModal] = useEditorModal()
 
@@ -48,9 +48,7 @@ export function BlockInsertPlugin({children}: {children: React.ReactNode}) {
           <span>Insert</span>
         </SelectTrigger>
         <SelectContent>
-          <SelectGroup>
-            {children}
-          </SelectGroup>
+          <SelectGroup>{children}</SelectGroup>
         </SelectContent>
       </Select>
     </>

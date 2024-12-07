@@ -1,9 +1,10 @@
-import { $getSelection } from 'lexical'
-import { $setBlocksType } from '@lexical/selection'
 import { $createHeadingNode, HeadingTagType } from '@lexical/rich-text'
+import { $setBlocksType } from '@lexical/selection'
+import { $getSelection } from 'lexical'
 
 import { useToolbarContext } from '@/components/editor/context/toolbar-context'
 import { SelectItem } from '@/components/ui/select'
+
 import { blockTypeToBlockName } from './block-format-data'
 
 export function FormatHeading({ levels = [] }: { levels: HeadingTagType[] }) {
@@ -19,10 +20,7 @@ export function FormatHeading({ levels = [] }: { levels: HeadingTagType[] }) {
   }
 
   return levels.map((level) => (
-    <SelectItem
-      value={level}
-      onPointerDown={() => formatHeading(level)}
-    >
+    <SelectItem value={level} onPointerDown={() => formatHeading(level)}>
       <div className="flex items-center gap-1 font-normal">
         {blockTypeToBlockName[level].icon}
         {blockTypeToBlockName[level].label}
