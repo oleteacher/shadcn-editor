@@ -45,7 +45,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { useModal } from '../hooks/use-modal'
+import { useEditorModal } from '../hooks/use-modal'
 import type { Position } from '../nodes/inline-image-node'
 import { $isInlineImageNode, InlineImageNode } from '../nodes/inline-image-node'
 import { LinkPlugin } from '../plugins/link-plugin'
@@ -204,7 +204,7 @@ export default function InlineImageComponent({
   width: 'inherit' | number
   position: Position
 }): JSX.Element {
-  const [modal, showModal] = useModal()
+  const [modal, showModal] = useEditorModal()
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] =

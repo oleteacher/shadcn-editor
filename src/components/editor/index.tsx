@@ -1,9 +1,8 @@
 'use client'
 
-import { EditorState, SerializedEditorState } from 'lexical'
-
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin'
+import { EditorState, SerializedEditorState } from 'lexical'
 
 import { TooltipProvider } from '@/components/ui/tooltip'
 
@@ -28,14 +27,16 @@ export function Editor({
       initialConfig={{
         ...editorConfig,
         ...(editorState ? { editorState } : {}),
-        ...(editorSerializedState ? { editorState: JSON.stringify(editorSerializedState) } : {}),
+        ...(editorSerializedState
+          ? { editorState: JSON.stringify(editorSerializedState) }
+          : {}),
       }}
     >
       <TooltipProvider>
         <SharedAutocompleteContext>
           <FloatingLinkContext>
             <Plugins />
-            
+
             <OnChangePlugin
               ignoreSelectionChange={true}
               onChange={(editorState) => {
@@ -43,7 +44,6 @@ export function Editor({
                 onSerializedChange?.(editorState.toJSON())
               }}
             />
-
           </FloatingLinkContext>
         </SharedAutocompleteContext>
       </TooltipProvider>

@@ -34,7 +34,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 
-import { useModal } from '../../hooks/use-modal'
+import { useEditorModal } from '../../hooks/use-modal'
 import { INSERT_FIGMA_COMMAND } from './figma-plugin'
 import { INSERT_TWEET_COMMAND } from './twitter-plugin'
 import { INSERT_YOUTUBE_COMMAND } from './youtube-plugin'
@@ -238,7 +238,7 @@ export function AutoEmbedDialog({
 }
 
 export function AutoEmbedPlugin(): JSX.Element {
-  const [modal, showModal] = useModal()
+  const [modal, showModal] = useEditorModal()
 
   const openEmbedModal = (embedConfig: PlaygroundEmbedConfig) => {
     showModal(`Embed ${embedConfig.contentName}`, (onClose) => (

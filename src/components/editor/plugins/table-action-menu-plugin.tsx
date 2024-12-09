@@ -57,7 +57,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 
-import { useModal } from '../hooks/use-modal'
+import { useEditorModal } from '../hooks/use-modal'
 import ColorPicker from '../ui/colorpicker'
 
 function computeSelectionCount(selection: TableSelection): {
@@ -141,7 +141,7 @@ function TableActionMenu({
     columns: 1,
     rows: 1,
   })
-  const [modal, showModal] = useModal()
+  const [modal, showModal] = useEditorModal()
   const [canMergeCells, setCanMergeCells] = useState(false)
   const [canUnmergeCell, setCanUnmergeCell] = useState(false)
   const [backgroundColor, setBackgroundColor] = useState(

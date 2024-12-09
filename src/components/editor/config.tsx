@@ -1,4 +1,5 @@
 import { InitialConfigType } from '@lexical/react/LexicalComposer'
+
 import { editorState } from './init'
 import { nodes } from './nodes'
 import { editorTheme } from './themes/editor-theme'

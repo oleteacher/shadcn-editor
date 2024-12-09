@@ -3,6 +3,7 @@
 ## Usage
 
 1. Init shadcn-ui in your project and add the following components:
+
 - `Button`
 - `Checkbox`
 - `Command`
@@ -40,8 +41,8 @@ import { Editor } from '@/components/editor'
 5. Use the `Editor` component in your project.
 
 ```tsx
-<Editor 
-  editorSerializedState={editorSerializedState} 
-  onSerializedChange={(value) => setEditorSerializedState(value)} 
+<Editor
+  editorSerializedState={editorSerializedState}
+  onSerializedChange={(value) => setEditorSerializedState(value)}
 />
 ```
