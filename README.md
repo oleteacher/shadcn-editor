@@ -46,3 +46,6 @@ import { Editor } from '@/components/editor'
   onSerializedChange={(value) => setEditorSerializedState(value)}
 />
 ```
+
+## Start History
+[![Star History Chart](https://api.star-history.com/svg?repos=htmujahid/shadcn-editor&type=Date)](https://star-history.com/#bytebase/star-history&Date)
