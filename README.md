@@ -2,50 +2,66 @@
 
 ## Usage
 
-1. Init shadcn-ui in your project and add the following components:
-
-- `Button`
-- `Checkbox`
-- `Command`
-- `Dialog`
-- `Input`
-- `Label`
-- `Popover`
-- `Scroll Area`
-- `Select`
-- `Separator`
-- `Tabs`
-- `Textarea`
-- `Tooltip`
-- `Toggle`
-- `Toggle Group`
-
-2. Clone the repository
+1. Run this command to setup batteries included editor.
 
 ```bash
-git clone https://github.com/htmujahid/shadcn-editor.git
+npx shadcn@latest add https://shadcn-editor.vercel.app/r/editor-x.json
 ```
 
-3. Copy the `src/components/editor` folder into your project.
-
-```bash
-cp -r shadcn-editor/src/components/editor your-project/src/components/
-```
-
-4. Import the `Editor` component into your project where you want to use it.
+2. Use the `Editor` component in your project.
 
 ```tsx
+'use client'
+
+import { useState } from 'react'
+
+import { SerializedEditorState } from 'lexical'
+
 import { Editor } from '@/components/editor'
-```
 
-5. Use the `Editor` component in your project.
+const initialValue = {
+  root: {
+    children: [
+      {
+        children: [
+          {
+            detail: 0,
+            format: 0,
+            mode: 'normal',
+            style: '',
+            text: 'Hello World 🚀',
+            type: 'text',
+            version: 1,
+          },
+        ],
+        direction: 'ltr',
+        format: '',
+        indent: 0,
+        type: 'paragraph',
+        version: 1,
+      },
+    ],
+    direction: 'ltr',
+    format: '',
+    indent: 0,
+    type: 'root',
+    version: 1,
+  },
+} as unknown as SerializedEditorState
 
-```tsx
-<Editor
-  editorSerializedState={editorSerializedState}
-  onSerializedChange={(value) => setEditorSerializedState(value)}
-/>
+export function EditorDemo() {
+  const [editorState, setEditorState] =
+    useState<SerializedEditorState>(initialValue)
+
+  return (
+    <Editor
+      editorSerializedState={editorState}
+      onSerializedChange={(value) => setEditorState(value)}
+    />
+  )
+}
 ```
 
 ## Start History
+
 [![Star History Chart](https://api.star-history.com/svg?repos=htmujahid/shadcn-editor&type=Date)](https://star-history.com/#bytebase/star-history&Date)
