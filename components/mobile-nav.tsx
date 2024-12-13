@@ -1,18 +1,17 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import Link, { LinkProps } from "next/link"
-import { useRouter } from "next/navigation"
+import * as React from 'react'
+
+import Link, { LinkProps } from 'next/link'
+import { useRouter } from 'next/navigation'
+
+import { Button } from '@/components/ui/button'
+import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
 
 // import { docsConfig } from "@/config/docs"
-import { cn } from "@/lib/utils"
-import { useMetaColor } from "@/hooks/use-meta-color"
-import { Button } from "@/components/ui/button"
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
+import { cn } from '@/lib/utils'
+
+import { useMetaColor } from '@/hooks/use-meta-color'
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
@@ -21,7 +20,7 @@ export function MobileNav() {
   const onOpenChange = React.useCallback(
     (open: boolean) => {
       setOpen(open)
-      setMetaColor(open ? "#09090b" : metaColor)
+      setMetaColor(open ? '#09090b' : metaColor)
     },
     [setMetaColor, metaColor]
   )
@@ -122,7 +121,7 @@ function MobileLink({
         router.push(href.toString())
         onOpenChange?.(false)
       }}
-      className={cn("text-base", className)}
+      className={cn('text-base', className)}
       {...props}
     >
       {children}
