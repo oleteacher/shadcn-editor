@@ -1,5 +1,4 @@
-
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 function PageHeader({
   className,
@@ -9,7 +8,7 @@ function PageHeader({
   return (
     <section
       className={cn(
-        "flex flex-col items-start gap-2 border-b border-border/40 py-8 dark:border-border md:py-10 lg:py-12",
+        'flex flex-col items-start gap-2 border-b border-border/40 py-8 dark:border-border md:py-10 lg:py-12',
         className
       )}
       {...props}
@@ -26,7 +25,7 @@ function PageHeaderHeading({
   return (
     <h1
       className={cn(
-        "text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]",
+        'text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]',
         className
       )}
       {...props}
@@ -41,7 +40,7 @@ function PageHeaderDescription({
   return (
     <p
       className={cn(
-        "max-w-2xl text-balance text-lg font-light text-foreground",
+        'max-w-2xl text-balance text-lg font-light text-foreground',
         className
       )}
       {...props}
@@ -56,7 +55,7 @@ function PageActions({
   return (
     <div
       className={cn(
-        "flex w-full items-center justify-start gap-2 py-2",
+        'flex w-full items-center justify-start gap-2 py-2',
         className
       )}
       {...props}

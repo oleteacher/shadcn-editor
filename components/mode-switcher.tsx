@@ -1,21 +1,24 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { MoonIcon, SunIcon } from "lucide-react"
-import { useTheme } from "next-themes"
+import * as React from 'react'
 
-import { META_THEME_COLORS } from "@/config/site"
-import { useMetaColor } from "@/hooks/use-meta-color"
-import { Button } from "@/components/ui/button"
+import { MoonIcon, SunIcon } from 'lucide-react'
+import { useTheme } from 'next-themes'
+
+import { Button } from '@/components/ui/button'
+
+import { useMetaColor } from '@/hooks/use-meta-color'
+
+import { META_THEME_COLORS } from '@/config/site'
 
 export function ModeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme()
   const { setMetaColor } = useMetaColor()
 
   const toggleTheme = React.useCallback(() => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark")
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
     setMetaColor(
-      resolvedTheme === "dark"
+      resolvedTheme === 'dark'
         ? META_THEME_COLORS.light
         : META_THEME_COLORS.dark
     )
