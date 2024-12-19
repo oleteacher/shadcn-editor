@@ -7,8 +7,8 @@ import { SelectItem } from '@/components/ui/select'
 import { InsertInlineImageDialog } from '../../inline-image-plugin'
 
 export function InsertInlineImage() {
-  const { activeEditor } = useToolbarContext()
-  const [, showModal] = useEditorModal()
+  const { activeEditor, showModal } = useToolbarContext()
+
   return (
     <SelectItem
       value="inline-image"

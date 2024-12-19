@@ -7,8 +7,7 @@ import { SelectItem } from '@/components/ui/select'
 import { InsertTableDialog } from '../../table-plugin'
 
 export function InsertTable() {
-  const { activeEditor } = useToolbarContext()
-  const [, showModal] = useEditorModal()
+  const { activeEditor, showModal } = useToolbarContext()
 
   return (
     <SelectItem
