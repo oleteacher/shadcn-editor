@@ -7,8 +7,7 @@ import { SelectItem } from '@/components/ui/select'
 import { InsertLayoutDialog } from '../../layout-plugin'
 
 export function InsertColumnsLayout() {
-  const { activeEditor } = useToolbarContext()
-  const [, showModal] = useEditorModal()
+  const { activeEditor, showModal } = useToolbarContext()
 
   return (
     <SelectItem

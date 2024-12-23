@@ -7,6 +7,7 @@ import { COMMAND_PRIORITY_CRITICAL, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { ToolbarContext } from '@/components/editor/context/toolbar-context'
 import { Separator } from '@/components/ui/separator'
 
+import { useEditorModal } from '../../hooks/use-modal'
 import { BlockFormatDropDown } from './block-format-toolbar-plugin'
 import { FormatBulletedList } from './block-format/format-bulleted-list'
 import { FormatCheckList } from './block-format/format-check-list'
@@ -43,6 +44,8 @@ export function ToolbarPlugin() {
   const [activeEditor, setActiveEditor] = useState(editor)
   const [blockType, setBlockType] = useState<string>('paragraph')
 
+  const [modal, showModal] = useEditorModal()
+
   const $updateToolbar = () => {}
 
   useEffect(() => {
@@ -62,7 +65,9 @@ export function ToolbarPlugin() {
       $updateToolbar={$updateToolbar}
       blockType={blockType}
       setBlockType={setBlockType}
+      showModal={showModal}
     >
+      {modal}
       <div className="vertical-align-middle sticky top-0 z-10 flex gap-2 overflow-auto border-b bg-white p-1">
         <HistoryToolbarPlugin />
         <Separator orientation="vertical" className="h-8" />

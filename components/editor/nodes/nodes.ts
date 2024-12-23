@@ -6,7 +6,13 @@ import { OverflowNode } from '@lexical/overflow'
 import { HorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
-import { ParagraphNode, TextNode } from 'lexical'
+import {
+  Klass,
+  LexicalNode,
+  LexicalNodeReplacement,
+  ParagraphNode,
+  TextNode,
+} from 'lexical'
 
 import { AutocompleteNode } from './autocomplete-node'
 import { CollapsibleContainerNode } from './collapsible-container-node'
@@ -27,39 +33,40 @@ import { MentionNode } from './mention-node'
 import { PageBreakNode } from './page-break-node'
 import { PollNode } from './poll-node'
 
-export const nodes = [
-  HeadingNode,
-  ParagraphNode,
-  TextNode,
-  QuoteNode,
-  ListNode,
-  ListItemNode,
-  LinkNode,
-  OverflowNode,
-  HashtagNode,
-  TableNode,
-  TableCellNode,
-  TableRowNode,
-  CodeNode,
-  CodeHighlightNode,
-  HorizontalRuleNode,
-  MentionNode,
-  PageBreakNode,
-  ImageNode,
-  InlineImageNode,
-  EmojiNode,
-  KeywordNode,
-  ExcalidrawNode,
-  PollNode,
-  LayoutContainerNode,
-  LayoutItemNode,
-  EquationNode,
-  CollapsibleContainerNode,
-  CollapsibleContentNode,
-  CollapsibleTitleNode,
-  AutoLinkNode,
-  FigmaNode,
-  TweetNode,
-  YouTubeNode,
-  AutocompleteNode,
-]
+export const nodes: ReadonlyArray<Klass<LexicalNode> | LexicalNodeReplacement> =
+  [
+    HeadingNode,
+    ParagraphNode,
+    TextNode,
+    QuoteNode,
+    ListNode,
+    ListItemNode,
+    LinkNode,
+    OverflowNode,
+    HashtagNode,
+    TableNode,
+    TableCellNode,
+    TableRowNode,
+    CodeNode,
+    CodeHighlightNode,
+    HorizontalRuleNode,
+    MentionNode,
+    PageBreakNode,
+    ImageNode,
+    InlineImageNode,
+    EmojiNode,
+    KeywordNode,
+    ExcalidrawNode,
+    PollNode,
+    LayoutContainerNode,
+    LayoutItemNode,
+    EquationNode,
+    CollapsibleContainerNode,
+    CollapsibleContentNode,
+    CollapsibleTitleNode,
+    AutoLinkNode,
+    FigmaNode,
+    TweetNode,
+    YouTubeNode,
+    AutocompleteNode,
+  ]

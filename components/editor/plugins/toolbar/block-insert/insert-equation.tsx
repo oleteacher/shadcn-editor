@@ -7,8 +7,7 @@ import { SelectItem } from '@/components/ui/select'
 import { InsertEquationDialog } from '../../equations-plugin'
 
 export function InsertEquation() {
-  const { activeEditor } = useToolbarContext()
-  const [, showModal] = useEditorModal()
+  const { activeEditor, showModal } = useToolbarContext()
 
   return (
     <SelectItem

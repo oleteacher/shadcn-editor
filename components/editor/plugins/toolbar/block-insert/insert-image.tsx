@@ -7,8 +7,7 @@ import { SelectItem } from '@/components/ui/select'
 import { InsertImageDialog } from '../../images-plugin'
 
 export function InsertImage() {
-  const { activeEditor } = useToolbarContext()
-  const [, showModal] = useEditorModal()
+  const { activeEditor, showModal } = useToolbarContext()
 
   return (
     <SelectItem

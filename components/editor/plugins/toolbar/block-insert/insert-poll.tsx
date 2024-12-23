@@ -7,8 +7,7 @@ import { SelectItem } from '@/components/ui/select'
 import { InsertPollDialog } from '../../poll-plugin'
 
 export function InsertPoll() {
-  const { activeEditor } = useToolbarContext()
-  const [, showModal] = useEditorModal()
+  const { activeEditor, showModal } = useToolbarContext()
 
   return (
     <SelectItem
