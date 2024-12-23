@@ -1,20 +1,12 @@
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
 
 import { Toaster } from 'sonner'
 
+import { fontMono, fontSans } from "@/lib/fonts"
+import { cn } from '@/lib/utils'
+
 import './globals.css'
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-})
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-})
 
 export const metadata: Metadata = {
   title: 'Shadcn Editor',
@@ -28,8 +20,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.querySelector('meta[name="theme-color"]').setAttribute('content', '#09090b')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(
+          "min-h-svh bg-background font-sans antialiased",
+          fontSans.variable,
+          fontMono.variable
+        )}
       >
         {children}
         <Toaster />
