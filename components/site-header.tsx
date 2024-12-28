@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Icons } from '@/components/icons'
 import { MainNav } from '@/components/main-nav'
 // import { MobileNav } from "@/components/mobile-nav"
-// import { ModeSwitcher } from "@/components/mode-switcher"
+import { ModeSwitcher } from "@/components/mode-switcher"
 import { Button } from '@/components/ui/button'
 
 import { siteConfig } from '@/config/site'
@@ -30,7 +30,7 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
-            {/* <ModeSwitcher /> */}
+            <ModeSwitcher />
           </nav>
         </div>
       </div>

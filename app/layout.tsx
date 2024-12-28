@@ -9,6 +9,8 @@ import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from '@/lib/utils'
 
 import './globals.css'
+import { ThemeProvider } from '@/components/providers'
+import { ThemeSwitcher } from '@/components/theme-switcher'
 
 
 export const metadata: Metadata = {
@@ -43,14 +45,23 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
-        <div data-wrapper="" className="border-border/40 dark:border-border">
-          <div className="mx-auto w-full border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          enableColorScheme
+        >
+          <div data-wrapper="" className="border-border/40 dark:border-border">
+            <div className="mx-auto w-full border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
+              <SiteHeader />
+              <main className="flex-1">{children}</main>
+              <SiteFooter />
+            </div>
           </div>
-        </div>
-        <Toaster />
+          <Toaster />
+          <ThemeSwitcher />
+        </ThemeProvider>
       </body>
     </html>
   )
