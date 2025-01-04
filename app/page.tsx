@@ -15,7 +15,7 @@ import {
 } from '@/components/page-header'
 import { Button } from '@/components/ui/button'
 
-import { siteConfig } from '@/config/site'
+import { Announcement } from '@/components/announcement'
 
 const initialValue = {
   root: {
@@ -52,31 +52,33 @@ export default function Home() {
     useState<SerializedEditorState>(initialValue)
 
   return (
-    <div className="relative">
+    <>
       <PageHeader>
-        <PageHeaderHeading>Craft rich text editor</PageHeaderHeading>
+        <Announcement />
+        <PageHeaderHeading>Craft Your Rich Text Editor</PageHeaderHeading>
         <PageHeaderDescription>
-          Lexical base rich text editor using shadcn/ui components
+          {/* Lexical base rich text editor using shadcn/ui components, batteries included. */}
+          Batteries included rich text editor, extendable with your needs.
+          <br />
+          Made with Lexical and Shadcn/UI
         </PageHeaderDescription>
         <PageActions>
           <Button asChild size="sm">
             <Link href="/docs">Get Started</Link>
           </Button>
           <Button asChild size="sm" variant="ghost">
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              href={siteConfig.links.github}
-            >
-              GitHub
-            </Link>
+            <Link href={"/docs/plugins"}>Browse Plugins</Link>
           </Button>
         </PageActions>
       </PageHeader>
-      <Editor
-        editorSerializedState={editorState}
-        onSerializedChange={(value) => setEditorState(value)}
-      />
-    </div>
+      <div className="container-wrapper">
+        <div className="container py-6">
+          <Editor
+            editorSerializedState={editorState}
+            onSerializedChange={(value) => setEditorState(value)}
+          />
+        </div>
+      </div>
+    </>
   )
 }

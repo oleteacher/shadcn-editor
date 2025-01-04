@@ -11,12 +11,60 @@ import { cn } from '@/lib/utils'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers'
 import { ThemeSwitcher } from '@/components/theme-switcher'
-
+import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
-  title: 'Shadcn Editor',
-  description: 'Lexical Editor using Shadcn Theming and Components',
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  metadataBase: new URL(siteConfig.url),
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+  ],
+  authors: [
+    {
+      name: "shadcn",
+      url: "https://shadcn.com",
+    },
+  ],
+  creator: "shadcn",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@shadcn",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: `${siteConfig.url}/site.webmanifest`,
 }
+
 
 export default function RootLayout({
   children,
@@ -52,11 +100,13 @@ export default function RootLayout({
           disableTransitionOnChange
           enableColorScheme
         >
-          <div data-wrapper="" className="border-border/40 dark:border-border">
-            <div className="mx-auto w-full border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
-              <SiteHeader />
-              <main className="flex-1">{children}</main>
-              <SiteFooter />
+          <div vaul-drawer-wrapper="">
+            <div className="relative flex min-h-svh flex-col bg-background">
+              <div data-wrapper="" className="border-grid flex flex-1 flex-col">
+                <SiteHeader />
+                <main className="flex flex-1 flex-col">{children}</main>
+                <SiteFooter />
+              </div>
             </div>
           </div>
           <Toaster />

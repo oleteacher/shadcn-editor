@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'shadcn/editor',
   url: 'https://shadcn-editor.vercel.app',
-  // ogImage: "https://ui.shadcn.com/og.jpg",
+  ogImage: "https://shadcn-editor.vercel.app/og.jpg",
   description:
     'A rich-text editor for the web, built with Lexical, ShadCN, and React.',
   links: {
