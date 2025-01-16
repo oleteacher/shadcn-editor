@@ -140,7 +140,7 @@ function CodeActionMenuContainer({
     <>
       {isShown ? (
         <div
-          className="code-action-menu-container user-select-none absolute flex h-9 flex-row items-center space-x-1 text-xs text-black/50"
+          className="code-action-menu-container user-select-none absolute flex h-9 flex-row items-center space-x-1 text-xs text-foreground/50"
           style={{ ...position }}
         >
           <div>{codeFriendlyName}</div>
