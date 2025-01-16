@@ -17,6 +17,7 @@ import { FormatNumberedList } from './block-format/format-numbered-list'
 import { FormatParagraph } from './block-format/format-paragraph'
 import { FormatQuote } from './block-format/format-quote'
 import { BlockInsertPlugin } from './block-insert-plugin'
+import { InsertCollapsibleContainer } from './block-insert/insert-collapsible-container'
 import { InsertColumnsLayout } from './block-insert/insert-columns-layout'
 import { InsertEmbeds } from './block-insert/insert-embeds'
 import { InsertExcalidraw } from './block-insert/insert-excalidraw'
@@ -107,6 +108,7 @@ export function ToolbarPlugin() {
               <InsertPageBreak />
               <InsertImage />
               <InsertInlineImage />
+              <InsertCollapsibleContainer/>
               <InsertExcalidraw />
               <InsertTable />
               <InsertPoll />

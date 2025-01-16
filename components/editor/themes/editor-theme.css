@@ -61,3 +61,31 @@
 .EditorTheme__tokenFunction {
   color: #dd4a68;
 }
+
+.Collapsible__container {
+  background-color: var(--background);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Collapsible__title{
+  padding: 0.25rem;
+  padding-left: 1rem;
+  position: relative;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  list-style-type: disclosure-closed;
+  list-style-position: inside;
+}
+
+.Collapsible__title p{
+  display: inline-flex;
+}
+.Collapsible__title::marker{
+  color: lightgray;
+}
+.Collapsible__container[open] >.Collapsible__title {
+  list-style-type: disclosure-open;
+}

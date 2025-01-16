@@ -45,15 +45,7 @@ export class CollapsibleTitleNode extends ElementNode {
 
   createDOM(config: EditorConfig, editor: LexicalEditor): HTMLElement {
     const dom = document.createElement('summary')
-    dom.classList.add(
-      'p-1',
-      'pl-4',
-      'relative',
-      'font-bold',
-      'list-none',
-      'outline-none',
-      'cursor-pointer'
-    )
+    dom.classList.add('Collapsible__title')
     if (IS_CHROME) {
       dom.addEventListener('click', () => {
         editor.update(() => {
