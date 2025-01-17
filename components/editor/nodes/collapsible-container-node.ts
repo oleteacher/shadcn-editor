@@ -73,7 +73,7 @@ export class CollapsibleContainerNode extends ElementNode {
       })
       dom = detailsDom
     }
-    dom.classList.add('bg-background', 'border', 'rounded-lg', 'mb-2')
+    dom.classList.add('Collapsible__container')
 
     return dom
   }
@@ -126,7 +126,7 @@ export class CollapsibleContainerNode extends ElementNode {
 
   exportDOM(): DOMExportOutput {
     const element = document.createElement('details')
-    element.classList.add('bg-background', 'border', 'rounded-lg', 'mb-2')
+    element.classList.add('Collapsible__container')
     element.setAttribute('open', this.__open.toString())
     return { element }
   }
