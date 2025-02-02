@@ -1,13 +1,11 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-import { Icons } from '@/components/icons'
-
-import { cn } from '@/lib/utils'
-
-import { siteConfig } from '@/config/site'
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
 
 export function MainNav() {
   const pathname = usePathname()
@@ -20,7 +18,7 @@ export function MainNav() {
           {siteConfig.name}
         </span>
       </Link>
-      {/* <nav className="flex items-center gap-4 text-sm xl:gap-6">
+      <nav className="flex items-center gap-4 text-sm xl:gap-6">
         <Link
           href="/docs"
           className={cn(
@@ -31,16 +29,15 @@ export function MainNav() {
           Docs
         </Link>
         <Link
-          href="/docs/components"
+          href="/docs/plugins"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/docs/components") &&
-              !pathname?.startsWith("/docs/component/chart")
+            pathname?.startsWith("/docs/plugins")
               ? "text-foreground"
               : "text-foreground/80"
           )}
         >
-          Components
+          Plugins
         </Link>
         <Link
           href="/blocks"
@@ -53,41 +50,7 @@ export function MainNav() {
         >
           Blocks
         </Link>
-        <Link
-          href="/charts"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/docs/component/chart") ||
-              pathname?.startsWith("/charts")
-              ? "text-foreground"
-              : "text-foreground/80"
-          )}
-        >
-          Charts
-        </Link>
-        <Link
-          href="/themes"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/themes")
-              ? "text-foreground"
-              : "text-foreground/80"
-          )}
-        >
-          Themes
-        </Link>
-        <Link
-          href="/colors"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/colors")
-              ? "text-foreground"
-              : "text-foreground/80"
-          )}
-        >
-          Colors
-        </Link>
-      </nav> */}
+      </nav>
     </div>
   )
 }

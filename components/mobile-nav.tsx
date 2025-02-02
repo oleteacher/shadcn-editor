@@ -1,17 +1,18 @@
-'use client'
+"use client"
 
-import * as React from 'react'
+import * as React from "react"
+import Link, { LinkProps } from "next/link"
+import { useRouter } from "next/navigation"
 
-import Link, { LinkProps } from 'next/link'
-import { useRouter } from 'next/navigation'
-
-import { Button } from '@/components/ui/button'
-import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
-
-// import { docsConfig } from "@/config/docs"
-import { cn } from '@/lib/utils'
-
-import { useMetaColor } from '@/hooks/use-meta-color'
+import { docsConfig } from "@/config/docs"
+import { cn } from "@/lib/utils"
+import { useMetaColor } from "@/hooks/use-meta-color"
+import { Button } from "@/registry/new-york/ui/button"
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/registry/new-york/ui/drawer"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
@@ -20,7 +21,7 @@ export function MobileNav() {
   const onOpenChange = React.useCallback(
     (open: boolean) => {
       setOpen(open)
-      setMetaColor(open ? '#09090b' : metaColor)
+      setMetaColor(open ? "#09090b" : metaColor)
     },
     [setMetaColor, metaColor]
   )
@@ -49,7 +50,7 @@ export function MobileNav() {
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </DrawerTrigger>
-      {/* <DrawerContent className="max-h-[60svh] p-0">
+      <DrawerContent className="max-h-[60svh] p-0">
         <div className="overflow-auto p-6">
           <div className="flex flex-col space-y-3">
             {docsConfig.mainNav?.map(
@@ -95,7 +96,7 @@ export function MobileNav() {
             ))}
           </div>
         </div>
-      </DrawerContent> */}
+      </DrawerContent>
     </Drawer>
   )
 }
@@ -121,7 +122,7 @@ function MobileLink({
         router.push(href.toString())
         onOpenChange?.(false)
       }}
-      className={cn('text-base', className)}
+      className={cn("text-base", className)}
       {...props}
     >
       {children}
