@@ -30,8 +30,7 @@ export default function BlocksLayout({
         <Announcement />
         <PageHeaderHeading>Craft Your Rich Text Editor</PageHeaderHeading>
         <PageHeaderDescription>
-          {/* Lexical base rich text editor using shadcn/ui components, batteries included. */}
-          Batteries included rich text editor, extendable with your needs.
+          Accessible, Customizable, Open Source Text Editor
           <br />
           Made with Lexical and Shadcn/UI
         </PageHeaderDescription>
