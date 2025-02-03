@@ -241,7 +241,7 @@ function BlockViewerView() {
         <ResizablePanelGroup direction="horizontal" className="relative z-10">
           <ResizablePanel
             ref={resizablePanelRef}
-            className="relative aspect-[4/2.5] rounded-xl border bg-background md:aspect-auto"
+            className="relative aspect-[4/2.5] bg-background md:aspect-auto"
             defaultSize={100}
             minSize={30}
           >

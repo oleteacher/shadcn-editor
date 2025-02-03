@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york/ui/button"
 
 export function OpenInV0Cta({ className }: React.ComponentProps<"div">) {
+  return null;
   return (
     <div
       className={cn(
