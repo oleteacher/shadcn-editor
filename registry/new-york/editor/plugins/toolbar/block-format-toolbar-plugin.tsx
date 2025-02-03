@@ -23,44 +23,42 @@ export function BlockFormatDropDown({
 
   function $updateToolbar(selection: BaseSelection) {
     if ($isRangeSelection(selection)) {
-      activeEditor.update(() => {
-        const anchorNode = selection.anchor.getNode()
-        let element =
-          anchorNode.getKey() === 'root'
-            ? anchorNode
-            : $findMatchingParent(anchorNode, (e) => {
-                const parent = e.getParent()
-                return parent !== null && $isRootOrShadowRoot(parent)
-              })
+      const anchorNode = selection.anchor.getNode()
+      let element =
+        anchorNode.getKey() === 'root'
+          ? anchorNode
+          : $findMatchingParent(anchorNode, (e) => {
+            const parent = e.getParent()
+            return parent !== null && $isRootOrShadowRoot(parent)
+          })
 
-        if (element === null) {
-          element = anchorNode.getTopLevelElementOrThrow()
-        }
+      if (element === null) {
+        element = anchorNode.getTopLevelElementOrThrow()
+      }
 
-        const elementKey = element.getKey()
-        const elementDOM = activeEditor.getElementByKey(elementKey)
+      const elementKey = element.getKey()
+      const elementDOM = activeEditor.getElementByKey(elementKey)
 
-        if (elementDOM !== null) {
-          // setSelectedElementKey(elementKey);
-          if ($isListNode(element)) {
-            const parentList = $getNearestNodeOfType<ListNode>(
-              anchorNode,
-              ListNode
-            )
-            const type = parentList
-              ? parentList.getListType()
-              : element.getListType()
-            setBlockType(type)
-          } else {
-            const type = $isHeadingNode(element)
-              ? element.getTag()
-              : element.getType()
-            if (type in blockTypeToBlockName) {
-              setBlockType(type as keyof typeof blockTypeToBlockName)
-            }
+      if (elementDOM !== null) {
+        // setSelectedElementKey(elementKey);
+        if ($isListNode(element)) {
+          const parentList = $getNearestNodeOfType<ListNode>(
+            anchorNode,
+            ListNode
+          )
+          const type = parentList
+            ? parentList.getListType()
+            : element.getListType()
+          setBlockType(type)
+        } else {
+          const type = $isHeadingNode(element)
+            ? element.getTag()
+            : element.getType()
+          if (type in blockTypeToBlockName) {
+            setBlockType(type as keyof typeof blockTypeToBlockName)
           }
         }
-      })
+      }
     }
   }
 
