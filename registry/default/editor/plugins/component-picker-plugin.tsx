@@ -6,6 +6,7 @@
  *
  */
 import { useCallback, useMemo, useState, JSX } from 'react'
+import { createPortal } from 'react-dom'
 
 import dynamic from 'next/dynamic'
 
@@ -57,6 +58,8 @@ import {
   TableIcon,
   TextIcon,
 } from 'lucide-react'
+
+import { Command, CommandGroup, CommandItem, CommandList } from '@/registry/new-york/ui/command'
 
 import { useEditorModal } from '@/registry/default/editor/editor-hooks/use-modal'
 import { INSERT_COLLAPSIBLE_COMMAND } from '@/registry/default/editor/plugins/collapsible-plugin'
