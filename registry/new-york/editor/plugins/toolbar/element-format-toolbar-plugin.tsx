@@ -114,7 +114,8 @@ export function ElementFormatToolbarPlugin() {
           value={value}
           variant={'outline'}
           aria-label={option.name}
-          className="size-8 p-0"
+          size="sm"
+          className="h-8 w-8"
         >
           {option.icon}
         </ToggleGroupItem>
@@ -126,7 +127,8 @@ export function ElementFormatToolbarPlugin() {
         value="outdent"
         aria-label="Outdent"
         variant={'outline'}
-        className="size-8 p-0"
+        size="sm"
+        className="h-8 w-8"
       >
         <IndentDecreaseIcon className="size-4" />
       </ToggleGroupItem>
@@ -135,7 +137,8 @@ export function ElementFormatToolbarPlugin() {
         value="indent"
         variant={'outline'}
         aria-label="Indent"
-        className="size-8 p-0"
+        size="sm"
+        className="h-8 w-8"
       >
         <IndentIncreaseIcon className="size-4" />
       </ToggleGroupItem>

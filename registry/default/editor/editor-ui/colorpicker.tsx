@@ -42,7 +42,7 @@ export default function ColorPicker({
         <Button
           size={'sm'}
           variant={'outline'}
-          className="flex items-center gap-1 px-2"
+          className="h-8 w-8"
           {...rest}
         >
           <span className="size-4 rounded-full">{icon}</span>
